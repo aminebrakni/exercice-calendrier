@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- import JavaScript -->
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/element-plus"></script>
+    <script src="//unpkg.com/element-plus/dist/locale/fr"></script>
+    <title>Element Plus demo</title>
+  </head>
+  <body>
+    <div id="app">
+        <form @submit="onSubmit" class="add-form">
+            <div class="demo-date-picker">
+                <div class="container">
+                    <div class="block">
+                        <span class="demonstration">Veuillez sélectionner une date début et une date de fin</span>
+                        <el-date-picker
+                            v-model="month"
+                            type="monthrange"
+                            range-separator="à"
+                            start-placeholder="Début mois"
+                            end-placeholder="Fin mois"
+                            format="MM/YYYY"
+                            value-format="MM-YYYY"
+                        />
+                    </div>
+                </div>
+            </div>
+            <!-- <button @click='handleInput' :disabled="month === ''" class="btn-active" :class="{ 'disabled' : this.month === ''}">Suivant</button> -->
+            <input type="submit" value="Suivant" :disabled="month === ''" class="btn-active" :class="{ 'disabled' : this.month === ''}" />
+        </form>
+        <section>
+            <div class="resultat" :class="{ 'isActive' : this.month !== ''}">
+                <span>Le premier mois choisi: {{ month[0] }}</span>
+                <span>Le second mois choisi: {{ month[1] }}</span>
+            </div>
+        </section>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+

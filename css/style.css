@@ -1,0 +1,99 @@
+.demo-date-picker {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.demo-date-picker .block {
+    padding: 30px 0;
+    text-align: center;
+    border-right: solid 1px var(--el-border-color);
+    flex: 1;
+}
+.demo-date-picker .block:last-child {
+    border-right: none;
+}
+
+.demo-date-picker .container {
+    flex: 1;
+    border-right: solid 1px var(--el-border-color);
+}
+.demo-date-picker .container .block {
+    border-right: none;
+}
+.demo-date-picker .container .block:last-child {
+    border-top: solid 1px var(--el-border-color);
+}
+.demo-date-picker .container:last-child {
+    border-right: none;
+}
+
+.demo-date-picker .demonstration {
+    display: block;
+    color: var(--el-text-color-secondary);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#app{text-align: center;}
+.btn-active{
+    width: 200px;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    color: #FFF;
+    background-color: #409EFF;
+    margin: 0 auto;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.btn-active:hover{
+    cursor: pointer;
+}
+
+.disabled{
+    background-color: gray;
+
+}
+.disabled:hover{
+    cursor: inherit;
+}
+
+.resultat{
+    display:none;
+}
+
+.isActive{
+    display: block;
+}
+
+.isActive span{
+    display: block;
+    color: #66C23A;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 10px;
+
+}
+
+@media screen and (max-width: 600px) {
+    
+    .el-date-range-picker__content.is-left, .el-date-range-picker .el-picker-panel__content.is-right{
+        display: block;
+        float: none;
+        width: 100%;
+    }
+    .el-picker-panel__body,.el-picker-panel__body-wrapper,.el-date-range-picker{
+        width: 100%;
+    }
+    .el-popper .is-pure{
+        width: 100%;
+        left:0;
+    }
+    .el-date-range-picker .el-picker-panel__body {
+        min-width: fit-content;
+        width: 100%;
+    }
+}
